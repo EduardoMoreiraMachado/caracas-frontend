@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../css/mensagens.css">
+        <link rel="stylesheet" href="../../css/reset.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/login.css">
+        <link rel="stylesheet" href="../../css/cardapio.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=League+Spartan:wght@200;300;400;700&family=Montserrat:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/ac5338e93e.js" crossorigin="anonymous"></script>
+        <script src="../../js/cardapio.js" defer type="module"></script>
+        <link rel = "shortcut icon" type = "imagem/x-icon" href = "../../../img/forno-de-pedra.png"/>
+        <title>Cardápio Pizzas</title>
+    </head>
+        <body>
+            <header id="header">
+                <span class="logo">Caracas</span>
+            </header>
+
+            <main>
+                <div class="categoria_container">
+                    <h1 class="categoria_title">Categoria</h1>
+                    <select class="categoria_options" name="categorias" id="categorias">
+                        <option value="0">Todas</option>
+                    </select>
+                </div>
+
+                <h1 class="title">nossas pizzas</h1>
+
+                <div class="pizzas__container" id="pizzas_container"></div>
+
+                <script>
+
+                    const atualizarFavoritos = async (qntd_favorito, id) => {
+                        let responseJSON = {}
+
+                        const url = `http://127.0.0.1:1206/v1/pizzaLikes/${id}`
+
+                        const options = {
+                            method: 'PUT',
+                            body: JSON.stringify(qntd_favorito),
+                            headers: {
+                                'content-type': 'application/json'
+                            }
+                        }
+
+                        const response = await fetch(url, options)
+                        console.log(response)
+
+                        responseJSON.statusCode = response.status
+                        responseJSON.json = response.json()
+                        
+                        return responseJSON
+                    }
+
+                    async function contagemFavorito(qntd_favorito, id) {
+                        let contador = qntd_favorito + 1
+
+                        const favoritosJSON = {
+                            qntd_favorito: contador
+                        }
+                        
+                        await atualizarFavoritos(favoritosJSON, id)
+                    }
+
+                </script>
+
+            </main>
+
+            <footer>
+                <div class="contacts-container">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <h1 class="social-text">(11) 4774-4700</h1>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h1 class="social-text">Caracas@gmail.com</h1>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h1 class="social-text"> Av. Francisco Pignatari, 650</h1>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <h1 class="copyright-text">Copyright © 2024 | Caracas</h1>
+                </div>
+                <div class="social-container">
+                    <a href="#">
+                        <div class="social-item">
+                            <i id="social-icon" class="fa-brands fa-youtube"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="social-item">
+                            <i id="social-icon" class="fa-brands fa-twitter"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="social-item">
+                            <i id="social-icon" class="fa-brands fa-instagram"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="social-item">
+                            <i id="social-icon" class="fa-brands fa-facebook-f"></i>
+                        </div>
+                    </a>
+                </div>
+            </footer>
+        </body>
+</html>

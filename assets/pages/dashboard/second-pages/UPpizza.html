@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../../css/reset.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <link rel="stylesheet" href="../../../css/welcome-page.css">
+        <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=League+Spartan:wght@200;300;400;500;600&family=Montserrat:wght@100;200;300;400;600;800;900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/ac5338e93e.js" crossorigin="anonymous"></script>
+        <script src="../../../js/pizzaUP.js" defer type="module"></script>
+        <script src="../../../js/links.js" defer type="module"></script>
+        <link rel="stylesheet" href="../../../css/pizza.css">
+        <title>Dashboard Pizzas</title>
+        <link rel = "shortcut icon" type = "imagem/x-icon" href = "../../../../img/forno-de-pedra.png"/>
+    </head>
+    <body>
+        <header id="header">
+            <span class="logo">Caracas</span>
+        </header>
+
+        <main id="main">
+            <div class="menu__container">
+                <span class="nome__adm" id="nome__adm"></span>
+                <div class="options__container">
+                    <ul class="options">
+                        <a href="#" class="option" id="pizzas">Pizzas</a>
+                        <a href="#" class="option" id="bebidas">Bebidas</a>
+                        <a href="#" class="option" id="servicos">Serviços</a>
+                        <a href="#" class="option" id="categorias">Categorias</a>
+                        <a href="#" class="option" id="mensagens">Mensagens</a>
+                        <a href="#" class="option" id="usuarios">Usuários</a>
+                        <a href="#" class="option" id="perfil">Perfil</a>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pizza__container">
+                <h1>pizzas</h1>
+                <div class="inputs__container" id="inputs_container">
+                    <div class="input__container">
+                        
+                        <div class="text__info">
+                            <input type="text" class="input__data" id="nome" placeholder="Nome" required>
+                            <input type="text" class="input__data" id="ingrediente" placeholder="Ingredientes" required>
+                            <input type="number" step="0.01" class="input__data" id="preco" placeholder="Preço" required>
+                            <input type="number" step="1" class="input__data" id="desconto" placeholder="Desconto (opcional)">
+                        </div>
+                        <label class="upload__img">
+                            <div class="img__preview" id="img_preview">
+                                <i class="fa-regular fa-plus" id="input__file">
+                                    <input type="file" class="img__input" id="img__input">
+                                </i>
+                            </div>
+                            <div class="habilitar__preview" id="habilitar_preview">
+                                <input id="preview_button" class="preview__button" type="radio">
+                                <label class="text__preview">Preview</label>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="categorias__container">
+                        <span class="title__categoria">Selecione a categoria</span>
+                        <div class="options" id="options_container">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button__edit" id="button_edit">
+                    <button id="excluir" class="button__update">excluir</button>
+                    <button id="atualizar" class="button__update">salvar</button>
+                </div>
+            </div>
+        </main>        
+    </body>
+</html>
