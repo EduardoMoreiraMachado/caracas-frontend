@@ -28,8 +28,8 @@ Dashboard é um tipo de interface gráfica de usuário que geralmente fornece vi
 ---
 
 ## Links
-- [Código do Front-End](https://github.com/EduardoMoreiraMachado/projeto-pizzaria-santello-front-end)
-- [Código do Back-End](https://github.com/EduardoMoreiraMachado/projeto-pizzaria-santello-back-end.git)
+- [Código do Front-End](https://github.com/EduardoMoreiraMachado/caracas-frontend.git)
+- [Código do Back-End](https://github.com/EduardoMoreiraMachado/caracas-backend.git)
 
 ---
 
